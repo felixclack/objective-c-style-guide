@@ -206,7 +206,7 @@ Constants should be camel-case with all words capitalized and prefixed by the re
 **Preferred:**
 
 ```objc
-static NSTimeInterval const RWTTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
+static NSTimeInterval const GCDTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
 ```
 
 **Not Preferred:**
@@ -291,7 +291,7 @@ Accessor Methods in Initializer Methods and dealloc, see [here](https://develope
 **Preferred:**
 
 ```objc
-@interface RWTTutorial : NSObject
+@interface GCDTutorial : NSObject
 
 @property (strong, nonatomic) NSString *tutorialName;
 
@@ -301,7 +301,7 @@ Accessor Methods in Initializer Methods and dealloc, see [here](https://develope
 **Not Preferred:**
 
 ```objc
-@interface RWTTutorial : NSObject {
+@interface GCDTutorial : NSObject {
   NSString *tutorialName;
 }
 ```
@@ -388,15 +388,15 @@ constants and not `#define`s unless explicitly being used as a macro.
 **Preferred:**
 
 ```objc
-static NSString * const RWTAboutViewControllerCompanyName = @"RayWenderlich.com";
+static NSString * const GCDAboutViewControllerCompanyName = @"wegocode.com";
 
-static CGFloat const RWTImageThumbnailHeight = 50.0;
+static CGFloat const GCDImageThumbnailHeight = 50.0;
 ```
 
 **Not Preferred:**
 
 ```objc
-#define CompanyName @"RayWenderlich.com"
+#define CompanyName @"wegocode.com"
 
 #define thumbnailHeight 2
 ```
@@ -411,10 +411,10 @@ types: `NS_ENUM()`
 **For Example:**
 
 ```objc
-typedef NS_ENUM(NSInteger, RWTLeftMenuTopItemType) {
-  RWTLeftMenuTopItemMain,
-  RWTLeftMenuTopItemShows,
-  RWTLeftMenuTopItemSchedule
+typedef NS_ENUM(NSInteger, GCDLeftMenuTopItemType) {
+  GCDLeftMenuTopItemMain,
+  GCDLeftMenuTopItemShows,
+  GCDLeftMenuTopItemSchedule
 };
 ```
 
@@ -422,11 +422,11 @@ You can also make explicit value assignments (showing older k-style constant
 definition):
 
 ```objc
-typedef NS_ENUM(NSInteger, RWTGlobalConstants) {
-  RWTPinSizeMin = 1,
-  RWTPinSizeMax = 5,
-  RWTPinCountMin = 100,
-  RWTPinCountMax = 500,
+typedef NS_ENUM(NSInteger, GCDGlobalConstants) {
+  GCDPinSizeMin = 1,
+  GCDPinSizeMax = 5,
+  GCDPinCountMin = 100,
+  GCDPinCountMax = 500,
 };
 ```
 
@@ -490,16 +490,16 @@ switch (condition) {
 When using an enumerated type for a switch, 'default' is not needed. For example:
 
 ```objc
-RWTLeftMenuTopItemType menuType = RWTLeftMenuTopItemMain;
+GCDLeftMenuTopItemType menuType = GCDLeftMenuTopItemMain;
 
 switch (menuType) {
-  case RWTLeftMenuTopItemMain:
+  case GCDLeftMenuTopItemMain:
     // ...
     break;
-  case RWTLeftMenuTopItemShows:
+  case GCDLeftMenuTopItemShows:
     // ...
     break;
-  case RWTLeftMenuTopItemSchedule:
+  case GCDLeftMenuTopItemSchedule:
     // ...
     break;
 }
@@ -517,7 +517,7 @@ The Anonymous category can be shared/exposed for testing using the
 **For Example:**
 
 ```objc
-@interface RWTDetailViewController ()
+@interface GCDDetailViewController ()
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 @property (strong, nonatomic) ADBannerView *iAdView;
@@ -642,7 +642,7 @@ result type.
 
 ```objc
 @interface Airplane
-+ (instancetype)airplaneWithType:(RWTAirplaneType)type;
++ (instancetype)airplaneWithType:(GCDAirplaneType)type;
 @end
 ```
 

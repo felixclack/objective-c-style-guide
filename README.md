@@ -1,4 +1,4 @@
-# The official GoCode Objective-C style guide.
+# The official CVC Objective-C style guide.
 
 ## Introduction
 
@@ -199,14 +199,14 @@ UIButton *setBut;
 
 A three letter prefix should always be used for class names and constants,
 however may be omitted for Core Data entity names. Generally, for GoCode work,
-the prefix 'GCD' should be used.
+the prefix 'CVC' should be used.
 
 Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.
 
 **Preferred:**
 
 ```objc
-static NSTimeInterval const GCDTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
+static NSTimeInterval const CVCTutorialViewControllerNavigationFadeAnimationDuration = 0.3;
 ```
 
 **Not Preferred:**
@@ -291,7 +291,7 @@ Accessor Methods in Initializer Methods and dealloc, see [here](https://develope
 **Preferred:**
 
 ```objc
-@interface GCDTutorial : NSObject
+@interface CVCTutorial : NSObject
 
 @property (strong, nonatomic) NSString *tutorialName;
 
@@ -301,7 +301,7 @@ Accessor Methods in Initializer Methods and dealloc, see [here](https://develope
 **Not Preferred:**
 
 ```objc
-@interface GCDTutorial : NSObject {
+@interface CVCTutorial : NSObject {
   NSString *tutorialName;
 }
 ```
@@ -388,15 +388,15 @@ constants and not `#define`s unless explicitly being used as a macro.
 **Preferred:**
 
 ```objc
-static NSString * const GCDAboutViewControllerCompanyName = @"wegocode.com";
+static NSString * const CVCAboutViewControllerCompanyName = @"yesheis.com";
 
-static CGFloat const GCDImageThumbnailHeight = 50.0;
+static CGFloat const CVCImageThumbnailHeight = 50.0;
 ```
 
 **Not Preferred:**
 
 ```objc
-#define CompanyName @"wegocode.com"
+#define CompanyName @"yesheis.com"
 
 #define thumbnailHeight 2
 ```
@@ -411,10 +411,10 @@ types: `NS_ENUM()`
 **For Example:**
 
 ```objc
-typedef NS_ENUM(NSInteger, GCDLeftMenuTopItemType) {
-  GCDLeftMenuTopItemMain,
-  GCDLeftMenuTopItemShows,
-  GCDLeftMenuTopItemSchedule
+typedef NS_ENUM(NSInteger, CVCLeftMenuTopItemType) {
+  CVCLeftMenuTopItemMain,
+  CVCLeftMenuTopItemShows,
+  CVCLeftMenuTopItemSchedule
 };
 ```
 
@@ -422,11 +422,11 @@ You can also make explicit value assignments (showing older k-style constant
 definition):
 
 ```objc
-typedef NS_ENUM(NSInteger, GCDGlobalConstants) {
-  GCDPinSizeMin = 1,
-  GCDPinSizeMax = 5,
-  GCDPinCountMin = 100,
-  GCDPinCountMax = 500,
+typedef NS_ENUM(NSInteger, CVCGlobalConstants) {
+  CVCPinSizeMin = 1,
+  CVCPinSizeMax = 5,
+  CVCPinCountMin = 100,
+  CVCPinCountMax = 500,
 };
 ```
 
@@ -490,16 +490,16 @@ switch (condition) {
 When using an enumerated type for a switch, 'default' is not needed. For example:
 
 ```objc
-GCDLeftMenuTopItemType menuType = GCDLeftMenuTopItemMain;
+CVCLeftMenuTopItemType menuType = CVCLeftMenuTopItemMain;
 
 switch (menuType) {
-  case GCDLeftMenuTopItemMain:
+  case CVCLeftMenuTopItemMain:
     // ...
     break;
-  case GCDLeftMenuTopItemShows:
+  case CVCLeftMenuTopItemShows:
     // ...
     break;
-  case GCDLeftMenuTopItemSchedule:
+  case CVCLeftMenuTopItemSchedule:
     // ...
     break;
 }
@@ -510,14 +510,14 @@ switch (menuType) {
 
 Private properties should be declared in class extensions (anonymous
 categories) in the implementation file of a class. Named categories (such as
-`GCDPrivate` or `private`) should never be used unless extending another class.
+`CVCPrivate` or `private`) should never be used unless extending another class.
 The Anonymous category can be shared/exposed for testing using the
 <headerfile>+Private.h file naming convention.
 
 **For Example:**
 
 ```objc
-@interface GCDDetailViewController ()
+@interface CVCDetailViewController ()
 
 @property (strong, nonatomic) GADBannerView *googleAdView;
 @property (strong, nonatomic) ADBannerView *iAdView;
@@ -642,7 +642,7 @@ result type.
 
 ```objc
 @interface Airplane
-+ (instancetype)airplaneWithType:(GCDAirplaneType)type;
++ (instancetype)airplaneWithType:(CVCAirplaneType)type;
 @end
 ```
 
